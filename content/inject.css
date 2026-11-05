@@ -1,0 +1,30 @@
+.aimp-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  margin: 6px 6px 0 !important;
+  padding: 7px 12px !important;
+  min-height: 0 !important;
+  height: auto !important;
+  width: auto !important;
+  border: 1px solid #7b2d7f !important;
+  border-radius: 8px !important;
+  background: #7b2d7f !important;
+  color: #fff !important;
+  font: 600 13px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  vertical-align: middle !important;
+  direction: ltr !important;
+  white-space: nowrap !important;
+}
+.aimp-btn:hover { filter: brightness(1.08) !important; }
+.aimp-btn svg { flex: none !important; }
+.aimp-btn[data-state="loading"] { opacity: 0.7 !important; cursor: progress !important; }
+.aimp-btn[data-state="done"] { background: #fff !important; color: #7b2d7f !important; }
+.aimp-btn[data-state="error"] { background: #e5484d !important; border-color: #e5484d !important; }
+.aimp-card-btn { padding: 5px 9px !important; font-size: 12px !important; margin: 6px 0 0 !important; }
+.aimp-product-btn { padding: 10px 16px !important; font-size: 14px !important; }

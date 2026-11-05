@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Action Product Importer",
+  "short_name": "Action Importer",
+  "version": "1.1.0",
+  "description": "Import products from abdeencenter.com (and other shops) into the Action.jo admin: scrape, track prices, upload images, save, export to Excel.",
+  "minimum_chrome_version": "116",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Action Product Importer",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png" }
+  },
+  "side_panel": { "default_path": "app/app.html" },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "permissions": ["storage", "unlimitedStorage", "sidePanel", "scripting", "tabs"],
+  "host_permissions": [
+    "https://action.jo/*",
+    "https://*.action.jo/*",
+    "https://abdeencenter.com/*",
+    "https://*.abdeencenter.com/*"
+  ],
+  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://abdeencenter.com/*", "https://*.abdeencenter.com/*"],
+      "js": ["content/scraper.js", "content/inject.js"],
+      "css": ["content/inject.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
